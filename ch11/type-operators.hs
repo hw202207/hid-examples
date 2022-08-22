@@ -27,9 +27,16 @@ type Point a = a + a * a + a * a * a
 zero2D :: Point Int
 zero2D = Inl (Inr (0 :*: 0))
 
+zero1D :: Point Int
+zero1D = Inl (Inl 0)
+
+zero3D :: Point Int
+zero3D = Inr (0 :*: 0 :*: 0)
+
 main :: IO ()
 main = do
   print val1
   print val2
+  print zero1D
   print zero2D
-
+  print zero3D
