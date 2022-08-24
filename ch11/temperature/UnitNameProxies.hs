@@ -21,6 +21,11 @@ instance UnitName F where
 instance UnitName unit => Show (Temp unit) where
   show (Temp t) = show t ++ "°" ++ unitName (Proxy :: Proxy unit)
 
+-- | this requires @PolyKinds@
+-- by default, the constrain is
+-- @
+-- class UnitName (u :: Type) where
+-- @
 instance UnitName Temp where
   unitName _ = "_unspecified unit_"
 
